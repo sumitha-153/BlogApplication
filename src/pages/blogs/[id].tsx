@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './blog.module.css';
 import { useRouter } from 'next/router';
 import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
+import Footer from '../footer/footer';
 import Image from 'next/image';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';

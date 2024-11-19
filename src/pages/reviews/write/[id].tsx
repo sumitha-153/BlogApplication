@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '../../navbar/Navbar';
-import Footer from '../../footer/Footer';
+import Footer from '../../footer/footer';
 import styles from '../review.module.css';
 
 const WriteReview = () => {

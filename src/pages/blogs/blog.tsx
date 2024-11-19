@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Navbar from '../navbar/Navbar';
 import styles from './blog.module.css';
 import { GetServerSideProps } from 'next';
-import Footer from '../footer/Footer';
+import Footer from '../footer/footer';
 import Image from 'next/image';
 import BlogDetails from './[id]';
 

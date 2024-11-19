@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
+import Footer from '../footer/footer';
 
 const ViewReviews = () => {
   const router = useRouter();
