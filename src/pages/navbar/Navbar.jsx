@@ -20,8 +20,6 @@ const Navbar = ( {children}) => {
           <Image className={styles.image} src="/logo.jpg" alt="logo" width={25} height={25} />
            <b className={styles.title}>BLOGIEE</b></div>
       <div className={styles.links}>
-        {/* <Theme /> */}
-        {/* <div className={styles.links} onClick={HandleHome}>Home </div> */}
         <Link href="/blogs/blog" className={styles.link}> Home </Link>
         <Link href="/contact" className={styles.link}>Contact</Link>
         <AuthLinks />

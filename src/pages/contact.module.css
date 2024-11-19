@@ -1,31 +1,69 @@
-
-
-.contactcontainer {
+.contactContainer {
     display: flex;
     justify-content: center;
-    min-height:auto;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4; /* Light background color */
     padding: 20px;
-    background-color: var(--background);
-  }
-.contactcard {
-    background-color:rgb(188, 187, 187);
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(58, 58, 58, 0.1);
-    max-width: 500px;
-    width:auto;
-  }
-  
-  .contactcard h1, .contactcard h2 {
-    margin-top: 0;
-  }
-  
-  .contactcard a {
-    color: var(--background);
-    text-decoration: underline;
-  }
-  
-  .contactcard a:hover {
-    text-decoration: none;
-  }
+}
+
+.contactCard {
+    background-color: white; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 40px; /* Padding inside the card */
+    max-width: 600px; /* Max width for the card */
+    width: 100%; /* Full width */
+    text-align: left; /* Align text to the left */
+}
+
+.title {
+    font-size: 2.5rem; /* Larger font size for the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.sectionTitle {
+    font-size: 1.5rem; /* Font size for section titles */
+    color: #0070f3; /* Primary color for section titles */
+    margin-top: 20px; /* Space above section titles */
+}
+
+.contactDetails p, .socialMedia p {
+    font-size: 1rem; /* Font size for contact details */
+    color: #666; /* Gray color for the text */
+    margin: 10px 0; /* Space between lines */
+}
+
+.contactCard a { /* Prefixing a with the contactCard class */
+    color: #0070f3; /* Primary color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.contactCard a:hover { /* Hover effect for links */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.socialMedia {
+    margin-top: 20px; /* Space above social media section */
+}
+
+/* Icons styling */
+.contactCard svg { /* Prefixing svg with the contactCard class */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icons with text */
+}
+
+.link { /* New class for links */
+    color: #0070f3; /* Primary color for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.link:hover { /* Hover effect for links */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.icon { /* New class for icons */
+    margin-right: 8px; /* Space between icon and text */
+    vertical-align: middle; /* Align icons with text */
+}

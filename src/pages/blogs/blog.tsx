@@ -11,6 +11,7 @@ interface Blog {
   id: number;
   title: string;
   author: string;
+
   date: string;
   content: string;
   tags: string[];
@@ -23,25 +24,6 @@ interface BlogsProps {
   blogs:Blog[];
 }
 
-// const BlogDetails = ({ blog }: { blog: Blog }) => {
-//   return (
-//     <div className={styles.blogdetails}>
-//       <div style={{display:'flex' ,flexDirection:'row' , gap:'10px'}}>
-//               <Image className={styles.image} src={blog.profileImage} alt={`${blog.author}'s profile`}  width={400} height={400}/>
-//                <p> By {blog.author} on {blog.date}</p>
-//               </div> 
-//                <Image className={styles.blogimages} src={blog.blogImage} alt={`${blog.title}`}  width={400} height={400}/>
-//                <br />
-
-//       <h2>{blog.title}</h2>
-//       <p>{blog.content}</p>
-//       <h5>Tags: {blog.tags.join(', ')}</h5>
-
-     
-      
-//     </div>
-//   );
-// };
 
 const Blogs = ({ blogs }: BlogsProps) => {
   const router = useRouter();
@@ -61,7 +43,7 @@ const Blogs = ({ blogs }: BlogsProps) => {
 
 
   const handleReadMore = (blog: Blog) => {
-    setSelectedBlog(blog);
+    router.push(`/blogs/${blog.id}`);
   };
 
   return (
@@ -69,7 +51,7 @@ const Blogs = ({ blogs }: BlogsProps) => {
       <Navbar>
       
       {selectedBlog ? (
-        <BlogDetails blog={selectedBlog} />
+        <BlogDetails />
       ) : (
         <ul className={styles.blogcard}>
           {blogs.map((blog) => (
@@ -92,17 +74,10 @@ const Blogs = ({ blogs }: BlogsProps) => {
                 <button 
                   onClick={() => handleReadMore(blog)}    
                   className={styles.buttons}              
-                  // className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
-                  {selectedBlog && (selectedBlog as Blog).id === blog.id ? 'Show less' : 'Read more...'}
+                  Read more...
                 </button>
-                
-                
-                {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{blog.content}</p> */}
-               
               </div>
-            
-
             </li>
           ))}
         </ul>

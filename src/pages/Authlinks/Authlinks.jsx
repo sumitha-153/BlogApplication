@@ -1,8 +1,7 @@
-
 "use client";
 import Link from "next/link";
 import styles from "./authlinks.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/router';
 
@@ -15,8 +14,10 @@ const AuthLinks = () => {
         router.push('/write/write');
     };
 
-    console.log(session);
-    console.log(status);
+    useEffect(() => {
+        console.log(session);
+        console.log(status);
+    }, [session, status]);
 
     return (
         <>

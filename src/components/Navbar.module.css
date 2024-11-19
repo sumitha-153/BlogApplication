@@ -1,0 +1,56 @@
+.navbar {
+    background-color: #0070f3; /* Primary color for the navbar */
+    padding: 15px 20px; /* Padding for the navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between; /* Space between title and links */
+    align-items: center; /* Center items vertically */
+}
+
+.title {
+    color: white; /* White text color for the title */
+    font-size: 1.8rem; /* Font size for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.navLinks {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Display links in a row */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navLinks li {
+    position: relative; /* Position relative for hover effects */
+}
+
+.navLinks a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1rem; /* Font size for links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navLinks a:hover {
+    color: #e0e0e0; /* Lighter color on hover */
+}
+
+.navLinks a::after {
+    content: ''; /* Create a pseudo-element for the underline effect */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Position it below the text */
+    height: 2px; /* Height of the underline */
+    background-color: #e0e0e0; /* Color of the underline */
+    transform: scaleX(0); /* Initially hide the underline */
+    transition: transform 0.3s; /* Smooth transition for the underline */
+}
+
+.navLinks a:hover::after {
+    transform: scaleX(1); /* Show the underline on hover */
+} 

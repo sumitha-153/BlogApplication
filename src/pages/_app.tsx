@@ -1,25 +1,9 @@
-
-// import { SessionProvider } from 'next-auth/react';
 // import '../styles/global.css';
-// import type { AppProps } from "next/app";
-// import  '../pages/blogs/blog.module.css';
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   return (
-//     <SessionProvider session={pageProps.session}>
-//       <Component {...pageProps} />
-//     </SessionProvider>
-//   );
-// }
-
-// export default MyApp;
-
-
 import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={pageProps.session}>
       <Component {...pageProps} />
     </SessionProvider>
   );

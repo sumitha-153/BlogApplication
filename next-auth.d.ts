@@ -29,7 +29,7 @@ export default NextAuth({
         if (user) {
           // Map MongoDB document to User object
           const userObject: User = {
-            id: user._id.toString(), // Convert ObjectId to string
+            id: user._id.toString(), 
             _id: user._id.toString(), // Convert ObjectId to string
             email: user.email,
             // Add other user properties here

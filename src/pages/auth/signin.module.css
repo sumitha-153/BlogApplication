@@ -1,73 +1,58 @@
-
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f4f4f4;
 }
 
-.image{
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
-.title{
-    font-size: xx-large;
-    /* color: orange; */
-}
-.formcontainer {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-left: 37%;
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.head {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-.pass{
-    display:flex;
-    flex-direction: row;
-    gap:20px
-}
-
-.labels {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.inputs {
+.button {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.buttons {
-    width: 105%;
-    padding: 0.75rem;
+    padding: 10px;
     background-color: #0070f3;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.buttons:hover {
+.button:hover {
     background-color: #005bb5;
 }
 
-
-
-.error{
+.error {
     color: red;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
+    margin: 10px 0;
+}
+
+.signinPrompt, .signupPrompt {
+    margin-top: 20px;
+    font-size: 0.9rem;
 }

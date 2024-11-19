@@ -22,59 +22,6 @@ interface Blog {
   blogImage: string;
 }
 
-const blogs: Blog[] = [
-  // Pre-existing blog entries
-  {
-    id: 1,
-    title: 'Understanding JavaScript Closures',
-    author: 'Jane Doe',
-    date: '2023-10-01',
-    content: 'A closure is a feature in JavaScript where...',
-    tags: ['JavaScript', 'Programming', 'Closures'],
-    profileImage: '/men1.jpeg',
-    blogImage: '/javascript.png',
-  },
-  {
-    id: 2,
-    title: 'A Guide to Responsive Web Design',
-    author: 'John Smith',
-    date: '2023-09-25',
-    content: 'Responsive web design is essential in today’s...',
-    tags: ['Web Design', 'CSS', 'Responsive'],
-    profileImage: '/profile.webp',
-    blogImage: '/webdesign.webp',
-  },
-  {
-    id: 3,
-    title: "Introduction to Machine Learning",
-    author: "Alice Johnson",
-    date: "2023-09-20",
-    content: "Machine learning is a powerful tool that is transforming various industries by enabling computers to learn from data and make intelligent decisions. Understanding the basics of machine learning, including its key concepts, common algorithms, and applications, is essential for leveraging its potential to solve real-world problems.",
-    tags: ["Machine Learning", "AI", "Data Science"],
-    profileImage: "/men1.jpeg",
-    blogImage: "/machinelearning.jpg"
-},
-{
-    id: 4,
-    title: "Top 10 Python Libraries for Data Science",
-    author: "Bob Brown",
-    date: "2023-09-15",
-    content: "Python is a popular language for data science due to its simplicity and the availability of powerful libraries...",
-    tags: ["Python", "Data Science", "Libraries"],
-    profileImage: "/men1.jpeg",
-    blogImage: "/python.png"
-},
-{
-    id: 5,
-    title: "Understanding RESTful APIs",
-    author: "Carol White",
-    date: "2023-09-10",
-    content: "RESTful APIs are a key component of modern web development...",
-    tags: ["APIs", "REST", "Web Development"],
-    profileImage: "/profile.webp",
-    blogImage: "/rest-api.png"
-}
-];
  const handler =async (req: NextApiRequest, res: NextApiResponse) => {
   console.log("entered into handler");
   
@@ -120,28 +67,33 @@ const blogs: Blog[] = [
       // Create a new blog post
       console.log(typeof(tags));
       console.log(tags);
+      const db = await connectToDatabase();
+      const database = db.db('BlogApplication');
+
+      const lastBlog = await database.collection('blogs').find().sort({ id: -1 }).limit(1).toArray();
+      const newId = lastBlog.length > 0 ? lastBlog[0].id + 1 : 1;
+  
       
       
-      const newBlog: Blog = {
-        id: blogs.length + 1, // Assign a new id
+        const newBlog: Blog = {
+        id: newId, 
         title: Array.isArray(title) ? title[0] : title as string,
         author: Array.isArray(author) ? author[0] : author as string,
         date: Array.isArray(date) ? date[0] : date as string,
         content: Array.isArray(content) ? content[0] : content as string,
-        tags: typeof tags === 'string' ? (tags as string).split(',').map(tag => tag.trim()) : [], // Convert comma-separated tags into an array
+        tags: Array.isArray(tags) ? tags : (tags as string).split(',').map(tag => tag.trim()), // Convert comma-separated tags into an array
         profileImage: profileImagePath, // Save the file path or URL
         blogImage: blogImagePath,
       };
+      const result = await database.collection('blogs').insertOne(newBlog);
+      console.log(result);
 
 
       console.log(newBlog);
       console.log(newBlog.tags);
       
 
-      const db = await connectToDatabase();
-      const database = db.db('BlogApplication'); // Replace 'BlogApplication' with your actual database name
-      const result = await database.collection('blogs').insertOne(newBlog);
-      console.log(result);
+
       
 
       // Respond with the newly created blog post

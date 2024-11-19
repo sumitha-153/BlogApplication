@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 const ProtectedPage = () => {
   const { data: session, status } = useSession();
+  console.log(session);
+  
 
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -15,7 +17,7 @@ const ProtectedPage = () => {
   }
 
   if (status === 'authenticated') {
-    return <div>Welcome, {session?.user?.name}!</div>;
+    return <div>Welcome</div>;
   }
 
   return null;

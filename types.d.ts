@@ -4,6 +4,7 @@ import { Db } from "mongodb";
 declare module "next-auth" {
   interface Session {
     user: {
+      [x: string]: ReactNode;
       id: string;
       // Add other user properties here
     };
