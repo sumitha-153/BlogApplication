@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Write.module.css';
+import styles from './write.module.css';
 import { useRouter } from 'next/router';
 
 const Write: React.FC = () => {

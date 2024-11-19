@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
     display: flex;
     align-items: center;
@@ -6,6 +7,21 @@
     /* background: url('/webdesign.webp') no-repeat center center fixed; Background image */
     background-size: cover; /* Cover the entire container */
     padding: 20px;
+=======
+
+.title{
+    font-size: xx-large;
+    font-family: sans-serif;
+}
+
+
+.image{
+    border-radius: 5px;
+}
+
+.logo{
+    margin-top: 10%;
+>>>>>>> 6787ee5820f8428e6444f47051e8496dc379c522
     text-align: center;
 }
 
