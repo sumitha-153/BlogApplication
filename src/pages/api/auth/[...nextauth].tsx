@@ -1,9 +1,6 @@
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 6787ee5820f8428e6444f47051e8496dc379c522
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
