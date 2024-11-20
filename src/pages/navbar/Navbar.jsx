@@ -42,7 +42,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import Link from "next/link";
 import AuthLinks from "../Authlinks/Authlinks";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 
 export default function Navbar({ children }) {
   return (

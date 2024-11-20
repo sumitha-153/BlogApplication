@@ -90,7 +90,9 @@ const Blogs = ({ blogs }: BlogsProps) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const res = await fetch(`http://localhost:3000/api/blogs`);
+    const res = await fetch(`http://127.0.0.1:3000/api/blogs`,{
+      method: 'GET',
+    });
     
     if (!res.ok) {
       throw new Error(`Failed to fetch blogs: ${res.statusText}`);

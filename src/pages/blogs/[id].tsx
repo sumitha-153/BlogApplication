@@ -43,7 +43,7 @@ const BlogDetail = () => {
       console.log(id);
       
       const fetchBlog = async () => {
-        const res = await fetch(`http://localhost:3000/api/blogs/${id}`);
+        const res = await fetch(`http://127.0.0.1:3000/api/blogs/${id}`);
         const data = await res.json();
         setBlog(data);
         setLoading(false); // Set loading to false after fetching blog

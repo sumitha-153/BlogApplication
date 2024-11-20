@@ -1,7 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { connectToDatabase } from '../../../utils/mongodb'; // Adjust the path if necessary
+import { connectToDatabase } from '../../../utils/mongodb'; 
+import cors, { runMiddleware } from '../../../utils/cors';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  await runMiddleware(req, res, cors); 
   const { method } = req;
   const { id } = req.query;
 

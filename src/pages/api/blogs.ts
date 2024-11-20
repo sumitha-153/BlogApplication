@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import fs from 'fs';
 import { connectToDatabase } from '../../utils/mongodb';
+import cors,{ runMiddleware} from '../../utils/cors';
 // Disable Next.js body parser to handle the form data with formidable
 export const config = {
   api: {
@@ -23,6 +24,7 @@ interface Blog {
 }
 
  const handler =async (req: NextApiRequest, res: NextApiResponse) => {
+  await runMiddleware(req, res, cors); 
   console.log("entered into handler");
   
   if (req.method === 'GET') {

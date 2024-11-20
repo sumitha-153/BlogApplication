@@ -92,7 +92,7 @@ const Write: React.FC = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3000/api/blogs', {
+            const response = await fetch('http://127.0.0.1:3000/api/blogs', {
                 method: 'POST',
                 body: formData,
             });
